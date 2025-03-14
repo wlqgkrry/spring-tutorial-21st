@@ -1,19 +1,22 @@
 # spring-tutorial-21st
 CEOS back-end 21st spring tutorial project
 
+<br>
 
 ## Spring이란?
 - 개발 초기에 개발자가 설정하고 관리해야 하는 대부분의 요소
   (= MVC 계층 구조, 클래스 생성자, 그 외 각 계층에서 필요한 객체 생성, 소멸, 의존성 관리 등의 기능)을 자동으로 처리해주는 프레임워크.
+  <br>
+  
 - 이를 통해 개발자는 개발 작업에 집중하고, 더 나아가 객체 간 관계의 설정 및 관리 작업을 더 쉽게 할 수 있습니다.
-
+<br>
 
 ## Spring의 Bean은 무엇일까요? - Bean의 라이프 사이클에 대해!
 - Bean : Spring 컨테이너에서 생성, 관리하는 재사용 가능한 **객체**입니다.
 - Bean의 특징
   (1) 객체(Bean) 간 의존성(연결점)을 설정할 수 있습니다.
   (2) Ioc, DI의 원리가 적용됩니다.
-
+<br>
 
 - Bean의 라이프 사이클
 1. @Component 또는 @Bean으로 등록된 객체가 생성됩니다.
@@ -21,6 +24,7 @@ CEOS back-end 21st spring tutorial project
 3. 초기화(Initaializing Bean, @PostConstruct -> Bean이 생성된 후 실행.)
 4. 애플리케이션이 실행되면서 빈이 사용됩니다.
 5. 소멸(Destroying Bean, @PreDestory -> Bean이 소멸되기 전 실행) : 애플리케이션 종료 시 정리 작업을 수행합니다.
+<br>
 
 
 
@@ -32,10 +36,12 @@ CEOS back-end 21st spring tutorial project
   주석은 프로그램에 영향을 끼치지 않지만 어노테이션은 프로그램의 동작에 다양한 영향을 줍니다.
 
 - 어노테이션의 종류
-  1. 표준 어노테이션
-  2. 메타 어노테이션
-  3. 사용자 어노테이션
+  
+ **(1) 표준 어노테이션
+  (2) 메타 어노테이션
+  (3) 사용자 어노테이션**
 
+<br>
 
 ### 1. 표준 어노테이션
 - 자바에서 기본적으로 제공하는 어노테이션
@@ -48,6 +54,7 @@ CEOS back-end 21st spring tutorial project
 6) @Override : 상위 클래스의 메서드를 오버라이딩 한다는 것을 알립니다.
 7) @SuppressWarning : 컴파일 경고 메시지가 나타나지 않도록 합니다.
 
+<br>
 
 ### 2. 메타 어노테이션
 - 다른 어노테이션에서도 사용되는 어노테이션
@@ -56,21 +63,19 @@ CEOS back-end 21st spring tutorial project
 2) @Qualifier → 특정한 Bean을 지정하여 주입합니다.
 3) @RequiredArgsConstructor → Lombok을 활용한 의존성을 주입합니다.
 
+<br>
 
 ### 3. 사용자 어노테이션
 - 사용자가 직접 정의하여 사용하는 어노테이션
+- 종류
 1) @Aspect → AOP를 정의하는 클래스.
 2) @Before → 메서드 실행 전에 동작합니다.
 3) @After → 메서드 실행 후 동작합니다.
 4) @Around → 메서드 실행 전후로 동작합니다.
 
 
-어노테이션을 사용하면 Bean으로 등록됩니다.
-- @Component
-- @Service
-- @Repository
-- @Controller
 
+<br>
 
 ## 단위 테스트 vs 통합 테스트
 
@@ -93,20 +98,23 @@ Mockito 같은 목(Mock) 객체를 활용하여 독립적으로 실행이 가능
 실제 DB, 외부 API 등과 연동되는 환경에서 실행합니다.
 환경 설정이 필요하여 실행 속도가 단위 테스트보다 느립니다.
 
+<br>
 
 ## Spring이 지원하는 기술들 - IoC/DI, AOP, PSA
 
-1. IoC (Inversion of Control, 제어의 역전)
+1. **IoC** (Inversion of Control, 제어의 역전)
 - 객체의 생성과 생명주기를 개발자가 직접 관리하는 것이 아니라, 스프링이 대신 관리합니다.
 - 기존에는 new 키워드를 사용해 객체를 생성했지만, 스프링에서는 자동으로 생성합니다.
 
-2. DI (Dependency Injection, 의존성 주입)
+2. **DI** (Dependency Injection, 의존성 주입)
 - 객체 간의 의존성을 스프링이 관리해 줍니다.
 - @Autowired, @Component, @Service 등을 활용하여 코드의 결합도를 낮출 수 있습니다.
 
-3. AOP (Aspect-Oriented Programming, 관점 지향 프로그래밍)
+3. **AOP** (Aspect-Oriented Programming, 관점 지향 프로그래밍)
 - 공통적인 기능(로깅, 트랜잭션 등)을 분리하여 관리합니다.
 - @Aspect, @Before, @After, @Around 등의 어노테이션을 사용합니다.
 
-4. PSA (Portable Service Abstraction, 서비스 추상화)
+4. **PSA** (Portable Service Abstraction, 서비스 추상화)
 - JDBC, 트랜잭션, 메시징 등 다양한 기술을 쉽게 사용할 수 있도록 스프링이 추상화를 제공합니다.
+
+<br>
